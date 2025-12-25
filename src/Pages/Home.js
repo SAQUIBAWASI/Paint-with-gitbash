@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"; // For animations
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
@@ -68,7 +68,7 @@ const Home = () => {
     <div className="w-full">
       {/* Hero Section */}
       <div
-        className="relative flex items-center justify-center w-full min-h-[80vh] text-white bg-center bg-cover px-4 md:px-8"
+        className="relative flex items-center justify-center w-full min-h-[60vh] md:min-h-[80vh] text-white bg-center bg-cover px-4 md:px-8"
         style={{ backgroundImage: "url('/images/home.jpg')" }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
@@ -94,14 +94,14 @@ const Home = () => {
       {/* Welcome Section with Slideshow */}
       <motion.div
         id="welcome"
-        className="flex flex-col items-center justify-between p-16 bg-purple-200 md:flex-row"
+        className="flex flex-col items-center justify-between p-6 bg-purple-200 md:p-16 md:flex-row"
         initial={{ opacity: 0, y: 50 }}
         animate={visibleSections.welcome ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
       >
         <div className="text-left md:w-1/2">
-          <h2 className="text-5xl font-extrabold text-gray-900">Welcome</h2>
-          <p className="mt-6 text-xl text-gray-800">
+          <h2 className="text-3xl font-extrabold text-gray-900 md:text-5xl">Welcome</h2>
+          <p className="mt-4 text-lg text-gray-800 md:mt-6 md:text-xl">
             We believe that every home and workspace deserves to shine with
             vibrant, lively colors. Our expert painting services are here to
             transform your vision into reality.
@@ -127,16 +127,16 @@ const Home = () => {
       {/* Why Choose Us Section with Slideshow */}
       <motion.div
         id="whyChooseUs"
-        className="flex flex-col items-center justify-between p-16 bg-purple-300 md:flex-row-reverse"
+        className="flex flex-col items-center justify-between p-6 bg-purple-300 md:p-16 md:flex-row-reverse"
         initial={{ opacity: 0, y: 50 }}
         animate={visibleSections.whyChooseUs ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
       >
         <div className="text-left md:w-1/2">
-          <h2 className="text-5xl font-extrabold text-gray-900">
+          <h2 className="text-3xl font-extrabold text-gray-900 md:text-5xl">
             Why Choose Us?
           </h2>
-          <ul className="mt-6 space-y-3 text-xl text-gray-800">
+          <ul className="mt-4 space-y-3 text-lg text-gray-800 md:mt-6 md:text-xl">
             <li>✅ <strong>Expert Craftsmanship</strong> - Flawless finish.</li>
             <li>✅ <strong>Premium Quality Paints</strong> - Long-lasting.</li>
             <li>✅ <strong>Eco-Friendly Solutions</strong> - Non-toxic paints.</li>

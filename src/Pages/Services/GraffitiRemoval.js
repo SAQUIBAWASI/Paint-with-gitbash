@@ -22,38 +22,40 @@ const GraffitiRemoval = () => {
 
   return (
     <div
-      className="relative flex flex-col items-center justify-center min-h-screen p-10 bg-center bg-no-repeat bg-cover"
+      className="relative flex flex-col items-center justify-center min-h-screen px-4 py-10 bg-center bg-no-repeat bg-cover sm:px-6 lg:px-8"
       style={{ backgroundImage: "url('/images/graffiti.jpg')" }}
     >
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black opacity-60"></div>
 
       {/* Content Wrapper */}
-      <div className="relative z-10 p-10 bg-white rounded-lg shadow-2xl bg-opacity-95 md:w-3/5">
-        <h1 className="text-5xl font-extrabold text-gray-900">
+      <div className="relative z-10 w-full max-w-5xl p-6 bg-white rounded-lg shadow-2xl bg-opacity-95 sm:p-10">
+        <h1 className="text-3xl font-extrabold text-center text-gray-900 sm:text-5xl">
           🎨 Professional Graffiti Removal
         </h1>
-        <p className="mt-4 text-lg leading-relaxed text-gray-800">
-          Say goodbye to **unwanted graffiti** with our{" "}
+        <p className="mt-4 text-base leading-relaxed text-center text-gray-800 sm:text-lg">
+          Say goodbye to <strong>unwanted graffiti</strong> with our{" "}
           <span className="font-bold text-purple-700">
             safe and eco-friendly cleaning solutions
           </span>
-          . We ensure **deep cleaning & long-lasting protection** for your space.
+          . We ensure <strong>deep cleaning & long-lasting protection</strong> for your space.
         </p>
 
         {/* Why Choose Us */}
-        <h2 className="mt-6 text-2xl font-semibold text-gray-900">Why Choose Us?</h2>
-        <ul className="mt-4 space-y-2 text-lg text-gray-700">
+        <h2 className="mt-6 text-2xl font-semibold text-center text-gray-900 sm:text-left">
+          Why Choose Us?
+        </h2>
+        <ul className="mt-4 space-y-2 text-base text-gray-700 sm:text-lg sm:pl-5">
           <li>✅ Safe & non-toxic graffiti removal</li>
           <li>✅ Fast & professional service</li>
           <li>✅ Ideal for homes, offices & public spaces</li>
         </ul>
 
         {/* Services Section */}
-        <h2 className="mt-8 text-3xl font-semibold text-gray-900">
+        <h2 className="mt-8 text-3xl font-semibold text-center text-gray-900 sm:text-left">
           Our Graffiti Removal Services:
         </h2>
-        <div className="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-2">
           {[
             {
               title: "🧼 Chemical-Free Removal",
@@ -86,7 +88,7 @@ const GraffitiRemoval = () => {
         <div className="flex justify-center mt-8">
           <button
             onClick={() => setIsModalOpen(true)}
-            className="px-8 py-3 text-lg font-bold text-white transition-transform transform rounded-lg shadow-lg bg-gradient-to-r from-purple-500 to-purple-700 hover:scale-110 hover:from-purple-600 hover:to-purple-800 hover:shadow-2xl"
+            className="px-6 py-3 text-base font-bold text-white transition-transform transform rounded-lg shadow-lg sm:text-lg bg-gradient-to-r from-purple-500 to-purple-700 hover:scale-110 hover:from-purple-600 hover:to-purple-800 hover:shadow-2xl"
           >
             🚀 Get a Free Quote
           </button>
@@ -94,8 +96,8 @@ const GraffitiRemoval = () => {
 
         {/* Modal */}
         {isModalOpen && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm">
-            <div className="relative w-full max-w-md p-6 bg-white rounded-lg shadow-xl">
+          <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-black bg-opacity-50 backdrop-blur-sm">
+            <div className="relative w-full max-w-lg p-6 bg-white rounded-lg shadow-xl sm:p-8">
               {/* Close Button */}
               <button
                 onClick={() => setIsModalOpen(false)}
@@ -104,7 +106,7 @@ const GraffitiRemoval = () => {
                 ✖
               </button>
 
-              <h2 className="mb-4 text-3xl font-bold text-center text-purple-700">
+              <h2 className="mb-4 text-2xl font-bold text-center text-purple-700 sm:text-3xl">
                 Request a Free Quote
               </h2>
 

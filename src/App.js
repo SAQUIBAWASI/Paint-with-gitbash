@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { FaPhone } from "react-icons/fa";
+import { useState } from "react";
+import { FaBars, FaPhone, FaTimes } from "react-icons/fa";
 import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Footer from "./Components/Footer";
 import About from "./Pages/About";
@@ -17,33 +17,36 @@ import RegularPainting from './Pages/Services/RegularPainting';
 import WallPainting from './Pages/Services/WallPainting';
 import WindowWashing from './Pages/Services/WindowWashing';
 
-
 const App = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <Router>
-      <nav className="relative flex items-center justify-between p-4 text-white bg-gray-900">
+      <nav className="relative flex items-center justify-between p-4 text-white bg-gray-900 z-50">
         <div className="flex items-center gap-4">
-        <img src="/images/logo1.png" alt="Kala Paintworks Logo" className="h-14" />
-
+          <img src="/images/logo1.png" alt="Kala Paintworks Logo" className="h-14" />
           <span className="text-xl font-bold text-purple-400">PAINTER</span>
         </div>
-        <div className="flex gap-6 text-lg">
+
+        {/* Desktop Menu */}
+        <div className="hidden gap-6 text-lg md:flex">
           <Link to="/" className="border-b-2 border-transparent hover:text-purple-400 hover:border-purple-400">Home</Link>
           <Link to="/about" className="border-b-2 border-transparent hover:text-purple-400 hover:border-purple-400">About</Link>
           <div className="relative">
-            <button 
+            <button
               className="border-b-2 border-transparent hover:text-purple-400 hover:border-purple-400"
               onMouseEnter={() => setDropdownOpen(true)}
-              onMouseLeave={() => setDropdownOpen(false)}>
+              onMouseLeave={() => setDropdownOpen(false)}
+            >
               Services ▾
             </button>
             {dropdownOpen && (
-              <div 
+              <div
                 className="absolute left-0 z-50 w-48 py-2 text-white bg-gray-700 rounded shadow-lg top-full"
                 onMouseEnter={() => setDropdownOpen(true)}
-                onMouseLeave={() => setDropdownOpen(false)}>
+                onMouseLeave={() => setDropdownOpen(false)}
+              >
                 <Link to="/services" className="block px-4 py-2 hover:bg-gray-600">All Services</Link>
                 <Link to="/regularpainting" className="block px-4 py-2 hover:bg-gray-600">Regular Painting</Link>
                 <Link to="/wallpainting" className="block px-4 py-2 hover:bg-gray-600">Wall Painting</Link>
@@ -56,15 +59,34 @@ const App = () => {
           </div>
           <Link to="/contact" className="border-b-2 border-transparent hover:text-purple-400 hover:border-purple-400">Contact</Link>
         </div>
-        <div className="flex items-center gap-2 px-4 py-2 text-purple-400 border-l border-purple-400">
+
+        {/* Mobile Menu Button */}
+        <div className="flex items-center gap-2 px-4 py-2 text-purple-400 border-l border-purple-400 md:hidden">
           <FaPhone className="text-xl" />
           <div>
             <span className="text-sm font-bold">Call Now</span>
             <p className="text-lg">+918309071308</p>
           </div>
         </div>
-        
+
+        {/* Mobile Hamburger Icon */}
+        <div className="flex items-center md:hidden">
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            {mobileMenuOpen ? <FaTimes className="text-2xl text-white" /> : <FaBars className="text-2xl text-white" />}
+          </button>
+        </div>
+
+      {mobileMenuOpen && (
+        <div className="absolute left-0 z-50 w-full text-white bg-gray-800 md:hidden top-full">
+          <Link to="/" onClick={() => setMobileMenuOpen(false)} className="block px-6 py-3 border-b border-gray-700 hover:bg-gray-600">Home</Link>
+          <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="block px-6 py-3 border-b border-gray-700 hover:bg-gray-600">About</Link>
+          <Link to="/services" onClick={() => setMobileMenuOpen(false)} className="block px-6 py-3 border-b border-gray-700 hover:bg-gray-600">Services</Link>
+          <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="block px-6 py-3 border-b border-gray-700 hover:bg-gray-600">Contact</Link>
+        </div>
+      )}
       </nav>
+
+      {/* Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
@@ -82,6 +104,7 @@ const App = () => {
         <Route path="/blogs" element={<Blog />} />
         <Route path="/blogsd" element={<BlogDetails />} />
       </Routes>
+
       <Footer />
     </Router>
   );

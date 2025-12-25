@@ -24,27 +24,27 @@ const FloorCoating = () => {
     <div>
       {/* Hero Section */}
       <div
-        className="relative flex flex-col items-center justify-center min-h-screen p-10 bg-center bg-no-repeat bg-cover"
+        className="relative flex flex-col items-center justify-center min-h-screen px-4 py-10 bg-center bg-no-repeat bg-cover sm:px-6 lg:px-8"
         style={{ backgroundImage: "url('/images/floor.jpg')" }}
       >
         <div className="absolute inset-0 bg-black opacity-60"></div>
-        <div className="relative z-10 p-10 bg-white rounded-lg shadow-2xl bg-opacity-95 md:w-3/5">
-          <h1 className="text-5xl font-extrabold text-gray-900">
+        <div className="relative z-10 w-full max-w-5xl p-6 bg-white rounded-lg shadow-2xl bg-opacity-95 sm:p-10">
+          <h1 className="text-3xl font-extrabold text-center text-gray-900 sm:text-5xl">
             🏡 Premium Floor Coating Services
           </h1>
-          <p className="mt-4 text-lg leading-relaxed text-gray-800">
+          <p className="mt-4 text-base leading-relaxed text-center text-gray-800 sm:text-lg">
             Protect and enhance your floors with our{" "}
             <span className="font-bold text-purple-700">
               durable, stylish, and long-lasting coatings.
-            </span>
-            Whether it's **residential, commercial, or industrial**, we have the right solution for you.
+            </span>{" "}
+            Whether it's <strong>residential, commercial, or industrial</strong>, we have the right solution for you.
           </p>
 
           {/* Why Choose Us */}
-          <h2 className="mt-6 text-2xl font-semibold text-gray-900">
+          <h2 className="mt-6 text-2xl font-semibold text-center text-gray-900 sm:text-left">
             Why Choose Us?
           </h2>
-          <ul className="mt-4 space-y-2 text-lg text-gray-700">
+          <ul className="mt-4 space-y-2 text-base text-gray-700 sm:text-lg sm:pl-5">
             <li>✅ Scratch-resistant & long-lasting protection</li>
             <li>✅ Eco-friendly, safe & low-VOC coatings</li>
             <li>✅ Customizable designs with stylish finishes</li>
@@ -52,10 +52,10 @@ const FloorCoating = () => {
           </ul>
 
           {/* Services Section */}
-          <h2 className="mt-8 text-3xl font-semibold text-gray-900">
+          <h2 className="mt-8 text-3xl font-semibold text-center text-gray-900 sm:text-left">
             Our Floor Coating Services:
           </h2>
-          <div className="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-2 lg:grid-cols-2">
             {[
               {
                 title: "✨ Epoxy Coating",
@@ -78,9 +78,7 @@ const FloorCoating = () => {
                 key={index}
                 className="p-5 transition-transform transform bg-gray-100 rounded-lg shadow-lg hover:scale-105"
               >
-                <h3 className="text-lg font-bold text-purple-700">
-                  {service.title}
-                </h3>
+                <h3 className="text-lg font-bold text-purple-700">{service.title}</h3>
                 <p className="mt-2 text-sm text-gray-700">{service.desc}</p>
               </div>
             ))}
@@ -90,7 +88,7 @@ const FloorCoating = () => {
           <div className="flex justify-center mt-8">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="px-8 py-3 text-lg font-bold text-white transition-transform transform rounded-lg shadow-lg bg-gradient-to-r from-purple-500 to-purple-700 hover:scale-110 hover:from-purple-600 hover:to-purple-800 hover:shadow-2xl"
+              className="px-8 py-3 text-base font-bold text-white transition-transform transform rounded-lg shadow-lg sm:text-lg bg-gradient-to-r from-purple-500 to-purple-700 hover:scale-110 hover:from-purple-600 hover:to-purple-800 hover:shadow-2xl"
             >
               🚀 Get a Free Quote
             </button>
@@ -99,15 +97,15 @@ const FloorCoating = () => {
       </div>
 
       {/* Testimonials Section - Added Above Footer */}
-      <div className="p-16 bg-purple-200">
-        <h2 className="text-4xl font-extrabold text-center text-gray-900">
+      <div className="p-8 bg-purple-200 sm:p-16">
+        <h2 className="text-3xl font-extrabold text-center text-gray-900 sm:text-4xl">
           💬 What Our Clients Say
         </h2>
-        <p className="mt-4 text-lg text-center text-gray-800">
+        <p className="mt-4 text-lg text-center text-gray-800 sm:text-xl">
           Real feedback from our happy customers!
         </p>
 
-        <div className="grid gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-3">
           {/* Testimonial 1 */}
           <div className="p-6 bg-white rounded-lg shadow-lg">
             <p className="text-lg text-gray-800">
@@ -148,7 +146,7 @@ const FloorCoating = () => {
               ✖
             </button>
 
-            <h2 className="mb-4 text-3xl font-bold text-center text-purple-700">
+            <h2 className="mb-4 text-2xl font-bold text-center text-purple-700 sm:text-3xl">
               Request a Free Quote
             </h2>
 

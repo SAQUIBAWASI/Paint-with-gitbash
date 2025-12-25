@@ -23,33 +23,35 @@ const MildewRemoval = () => {
 
   return (
     <div
-      className="relative flex flex-col items-center justify-center p-10 bg-center bg-no-repeat bg-cover"
+      className="relative flex flex-col items-center justify-center px-4 py-10 bg-center bg-no-repeat bg-cover sm:px-8 md:px-10 lg:px-20"
       style={{
         backgroundImage: "url('/images/maild.jpg')",
         minHeight: "100vh",
         width: "100%",
       }}
     >
-      {/* Dark Overlay */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black opacity-60"></div>
 
-      {/* Content Wrapper */}
-      <div className="relative z-10 p-10 bg-white rounded-lg shadow-2xl bg-opacity-95 md:w-3/5">
-        <h1 className="text-5xl font-extrabold text-gray-900">
+      {/* Content */}
+      <div className="relative z-10 w-full max-w-6xl p-6 bg-white rounded-lg shadow-2xl bg-opacity-95 sm:p-10">
+        <h1 className="text-3xl font-extrabold text-gray-900 sm:text-4xl md:text-5xl">
           🌱 Professional Mildew Removal
         </h1>
-        <p className="mt-4 text-lg leading-relaxed text-gray-800">
-          Say goodbye to **mildew & mold** with our{" "}
+        <p className="mt-4 text-base leading-relaxed text-gray-800 sm:text-lg">
+          Say goodbye to <strong>mildew & mold</strong> with our{" "}
           <span className="font-bold text-green-700">
             safe and eco-friendly cleaning solutions
           </span>
-          . We ensure **deep cleaning & long-lasting protection** for your space.
+          . We ensure <strong>deep cleaning & long-lasting protection</strong> for your space.
         </p>
 
-        {/* Key Features */}
+        {/* Features */}
         <div className="mt-6">
-          <h2 className="text-2xl font-semibold text-gray-900">Why Choose Us?</h2>
-          <ul className="mt-4 space-y-2 text-lg text-gray-700">
+          <h2 className="text-xl font-semibold text-gray-900 sm:text-2xl">
+            Why Choose Us?
+          </h2>
+          <ul className="mt-4 space-y-2 text-base text-gray-700 sm:text-lg">
             <li>✅ Safe & non-toxic cleaning solutions</li>
             <li>✅ Prevents regrowth & enhances air quality</li>
             <li>✅ Fast & professional service</li>
@@ -57,11 +59,11 @@ const MildewRemoval = () => {
           </ul>
         </div>
 
-        {/* Services Section */}
-        <h2 className="mt-8 text-3xl font-semibold text-gray-900">
+        {/* Services */}
+        <h2 className="mt-8 text-2xl font-semibold text-gray-900 sm:text-3xl">
           Our Mildew Removal Services:
         </h2>
-        <div className="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2">
+        <div className="grid gap-6 mt-6 sm:grid-cols-2">
           {[
             {
               title: "🛁 Bathroom & Kitchen Cleaning",
@@ -82,36 +84,36 @@ const MildewRemoval = () => {
           ].map((service, index) => (
             <div
               key={index}
-              className="p-5 transition-transform transform bg-gray-100 rounded-lg shadow-lg hover:scale-105"
+              className="p-4 transition-transform transform bg-gray-100 rounded-lg shadow-md hover:scale-105"
             >
-              <h3 className="text-lg font-bold text-green-700">{service.title}</h3>
+              <h3 className="text-base font-bold text-green-700 sm:text-lg">{service.title}</h3>
               <p className="mt-2 text-sm text-gray-700">{service.desc}</p>
             </div>
           ))}
         </div>
 
-        {/* Get a Free Quote Button */}
-        <div className="flex justify-center mt-8">
+        {/* Quote Button */}
+        <div className="flex justify-center mt-10">
           <button
             onClick={() => setIsModalOpen(true)}
-            className="px-8 py-3 text-lg font-bold text-white transition-transform transform rounded-lg shadow-lg bg-gradient-to-r from-green-500 to-green-700 hover:scale-110 hover:from-green-600 hover:to-green-800 hover:shadow-2xl"
+            className="px-6 py-3 text-sm font-bold text-white transition-transform transform rounded-lg shadow-lg sm:px-8 sm:text-lg bg-gradient-to-r from-green-500 to-green-700 hover:scale-110 hover:from-green-600 hover:to-green-800 hover:shadow-2xl"
           >
             🚀 Get a Free Quote
           </button>
         </div>
 
-        {/* Modal - Request a Free Quote */}
+        {/* Modal */}
         {isModalOpen && (
-          <div className="fixed inset-0 flex items-center justify-center transition-opacity duration-300 bg-black bg-opacity-50 backdrop-blur-sm">
-            <div className="relative w-full max-w-lg p-8 bg-white rounded-lg shadow-lg animate-fadeIn">
+          <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-black bg-opacity-50 backdrop-blur-sm">
+            <div className="relative w-full max-w-lg p-6 bg-white rounded-lg shadow-xl sm:p-8">
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="absolute text-2xl text-gray-700 top-2 right-3 hover:text-red-600"
+                className="absolute text-xl text-gray-700 top-2 right-3 hover:text-red-600"
               >
                 ✖
               </button>
 
-              <h2 className="mb-6 text-3xl font-bold text-center text-green-700">
+              <h2 className="mb-6 text-2xl font-bold text-center text-green-700 sm:text-3xl">
                 Request a Free Quote
               </h2>
 
@@ -125,7 +127,6 @@ const MildewRemoval = () => {
                   required
                   className="w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-green-400"
                 />
-
                 <input
                   type="email"
                   name="email"
@@ -135,7 +136,6 @@ const MildewRemoval = () => {
                   required
                   className="w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-green-400"
                 />
-
                 <input
                   type="tel"
                   name="phone"
@@ -145,7 +145,6 @@ const MildewRemoval = () => {
                   required
                   className="w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-green-400"
                 />
-
                 <select
                   name="service"
                   value={formData.service}
@@ -154,20 +153,11 @@ const MildewRemoval = () => {
                   className="w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-green-400"
                 >
                   <option value="">Select a Service</option>
-                  <option value="Bathroom & Kitchen Cleaning">
-                    Bathroom & Kitchen Cleaning
-                  </option>
-                  <option value="Wall & Ceiling Treatment">
-                    Wall & Ceiling Treatment
-                  </option>
-                  <option value="HVAC & Ventilation Cleaning">
-                    HVAC & Ventilation Cleaning
-                  </option>
-                  <option value="Moisture Control Solutions">
-                    Moisture Control Solutions
-                  </option>
+                  <option value="Bathroom & Kitchen Cleaning">Bathroom & Kitchen Cleaning</option>
+                  <option value="Wall & Ceiling Treatment">Wall & Ceiling Treatment</option>
+                  <option value="HVAC & Ventilation Cleaning">HVAC & Ventilation Cleaning</option>
+                  <option value="Moisture Control Solutions">Moisture Control Solutions</option>
                 </select>
-
                 <textarea
                   name="message"
                   placeholder="Additional Details (Optional)"

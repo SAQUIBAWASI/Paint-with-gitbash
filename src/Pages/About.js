@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const About = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen p-10 bg-gray-100">
+    <div className="relative flex flex-col items-center justify-center min-h-screen p-6 md:p-10 bg-gray-100">
       {/* Decorative Background Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-gray-300 to-gray-100 opacity-30"></div>
 
       {/* Content Container */}
       <div className="relative z-10 max-w-5xl text-center">
-        <h2 className="text-5xl font-extrabold text-gray-800">About Us</h2>
+        <h2 className="text-3xl font-extrabold text-gray-800 md:text-5xl">About Us</h2>
         <p className="mt-4 text-lg text-gray-700">
           We are a team of highly skilled professionals specializing in painting and cleaning solutions, dedicated to transforming spaces with precision and excellence.
           We are a team of highly skilled professionals specializing in painting and cleaning solutions, dedicated to transforming spaces with precision and excellence. Our expertise ensures that every project is handled with the utmost care, bringing life and vibrancy to homes and businesses alike. With years of experience in the industry, we take pride in delivering high-quality results that not only enhance the aesthetics of your space but also provide long-lasting protection. Whether it’s a residential property needing a fresh coat of paint or a commercial space requiring deep cleaning, our commitment to quality and customer satisfaction remains our top priority. Our approach combines attention to detail, the use of premium materials, and modern techniques to achieve flawless finishes. We believe that every space has the potential to be beautiful, and with our expert services, we help turn your vision into reality. Let us bring color, care, and perfection to your surroundings, making them more inviting, elegant, and refreshing.

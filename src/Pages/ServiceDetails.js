@@ -15,6 +15,7 @@ import w1 from "../assets/images/w1.jpg";
 import w2 from "../assets/images/w2.jpg";
 import w3 from "../assets/images/w3.jpg";
 import Wall from "../assets/images/wall.jpg";
+
 const serviceData = {
   "Regular Painting": {
     images: [Regul, R1, w2, Floor],
@@ -47,49 +48,57 @@ const KnowMore = () => {
   const navigate = useNavigate();
   const service = serviceData[title];
 
-  // Image Slider State
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % service.images.length);
-    }, 3000); // Image changes every 3 seconds
-
+      setCurrentImageIndex(
+        (prevIndex) => (prevIndex + 1) % service.images.length
+      );
+    }, 3000);
     return () => clearInterval(interval);
   }, [service.images.length]);
 
   if (!service) {
-    return <h2 className="text-center text-red-500">Service Not Found</h2>;
+    return (
+      <h2 className="mt-10 text-xl text-center text-red-500">Service Not Found</h2>
+    );
   }
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen px-4 pt-4 pb-10 bg-gray-100 sm:px-6 lg:px-8">
       {/* Hero Section */}
       <div
-        className="relative flex items-center justify-center w-full text-white h-80"
+        className="relative flex items-center justify-center text-white rounded-xl overflow-hidden h-60 sm:h-72 md:h-[28rem] lg:h-[32rem] mb-10"
         style={{
           backgroundImage: `url(${service.images[0]})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <h1 className="relative text-4xl font-bold">{title}</h1>
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+        <h1 className="relative z-10 px-4 text-3xl font-bold text-center sm:text-4xl md:text-5xl">
+          {title}
+        </h1>
       </div>
 
       {/* Content Section */}
-      <div className="max-w-6xl p-6 mx-auto mt-10 bg-white shadow-lg rounded-xl">
-        <h2 className="text-3xl font-semibold text-gray-900">{title}</h2>
-        <p className="mt-4 text-gray-700">{service.description}</p>
+      <div className="max-w-5xl p-6 mx-auto bg-white shadow-md sm:p-8 md:p-10 rounded-xl">
+        <h2 className="mb-4 text-2xl font-semibold text-gray-900 sm:text-3xl">
+          {title}
+        </h2>
+        <p className="mb-6 text-base text-gray-700 sm:text-lg">
+          {service.description}
+        </p>
 
-        {/* Auto-Sliding Image */}
-        <div className="relative w-full mt-6 h-60">
+        {/* Auto-Sliding Image Carousel */}
+        <div className="relative w-full h-56 mb-8 overflow-hidden rounded-lg sm:h-72 md:h-96">
           {service.images.map((img, index) => (
             <img
               key={index}
               src={img}
               alt={`${title} ${index}`}
-              className={`absolute inset-0 object-cover w-full h-full rounded-lg transition-opacity duration-1000 ${
+              className={`absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-1000 ${
                 index === currentImageIndex ? "opacity-100" : "opacity-0"
               }`}
             />
@@ -97,12 +106,14 @@ const KnowMore = () => {
         </div>
 
         {/* Back Button */}
-        <button
-          onClick={() => navigate("/services")}
-          className="px-6 py-2 mt-6 text-white bg-purple-500 rounded-lg hover:bg-purple-600"
-        >
-          Back to Services
-        </button>
+        <div className="flex justify-center">
+          <button
+            onClick={() => navigate("/services")}
+            className="px-6 py-2 text-base text-white transition bg-purple-600 rounded-lg hover:bg-purple-700 sm:text-lg"
+          >
+            Back to Services
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -22,37 +22,37 @@ const WindowWashing = () => {
 
   return (
     <div
-      className="relative flex flex-col items-center justify-center min-h-screen p-10 bg-center bg-no-repeat bg-cover"
+      className="relative flex flex-col items-center justify-center min-h-screen px-4 py-10 bg-center bg-no-repeat bg-cover sm:px-6 lg:px-8"
       style={{ backgroundImage: "url('/images/window1.jpg')" }}
     >
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black opacity-60"></div>
 
       {/* Content Wrapper */}
-      <div className="relative z-10 p-10 bg-white rounded-lg shadow-2xl bg-opacity-95 md:w-3/5">
-        <h1 className="text-5xl font-extrabold text-gray-900">
+      <div className="relative z-10 w-full max-w-4xl p-6 bg-white rounded-lg shadow-2xl bg-opacity-95 sm:p-10">
+        <h1 className="text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-5xl">
           ✨ Crystal Clear Windows, Every Time!
         </h1>
-        <p className="mt-4 text-lg leading-relaxed text-gray-800">
-          Enjoy streak-free, spotless windows with **professional window washing services**.  
-          We use **eco-friendly solutions** and **advanced cleaning techniques** to make your windows shine,  
+        <p className="mt-4 text-base leading-relaxed text-gray-800 sm:text-lg">
+          Enjoy streak-free, spotless windows with <strong>professional window washing services</strong>.
+          We use <strong>eco-friendly solutions</strong> and <strong>advanced cleaning techniques</strong> to make your windows shine,
           enhancing the appearance of your home or business.
         </p>
 
-        {/* Why Choose Us Section */}
-        <h2 className="mt-6 text-2xl font-semibold text-gray-900">Why Choose Us?</h2>
-        <ul className="mt-4 space-y-2 text-lg text-gray-700">
+        {/* Why Choose Us */}
+        <h2 className="mt-6 text-xl font-semibold text-gray-900 sm:text-2xl">Why Choose Us?</h2>
+        <ul className="mt-4 space-y-2 text-base text-gray-700 sm:text-lg">
           <li>✅ Streak-free, crystal-clear windows</li>
           <li>✅ Safe & eco-friendly cleaning solutions</li>
           <li>✅ Professional service for homes & businesses</li>
           <li>✅ Quick, efficient, and affordable</li>
         </ul>
 
-        {/* Services Section */}
-        <h2 className="mt-8 text-3xl font-semibold text-gray-900">
+        {/* Services */}
+        <h2 className="mt-8 text-2xl font-semibold text-gray-900 sm:text-3xl">
           Our Window Washing Services:
         </h2>
-        <div className="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-2">
           {[
             { title: "🏠 Residential Window Cleaning", desc: "Sparkling clean windows for your home." },
             { title: "🏢 Commercial Glass Cleaning", desc: "Maintain a spotless professional appearance." },
@@ -61,10 +61,10 @@ const WindowWashing = () => {
           ].map((service, index) => (
             <div
               key={index}
-              className="p-5 transition-transform transform bg-gray-100 rounded-lg shadow-lg hover:scale-105"
+              className="p-4 transition-transform transform bg-gray-100 rounded-lg shadow-lg hover:scale-105"
             >
-              <h3 className="text-lg font-bold text-blue-700">{service.title}</h3>
-              <p className="mt-2 text-sm text-gray-700">{service.desc}</p>
+              <h3 className="text-base font-bold text-blue-700 sm:text-lg">{service.title}</h3>
+              <p className="mt-2 text-sm text-gray-700 sm:text-base">{service.desc}</p>
             </div>
           ))}
         </div>
@@ -73,7 +73,7 @@ const WindowWashing = () => {
         <div className="flex justify-center mt-8">
           <button
             onClick={() => setIsModalOpen(true)}
-            className="px-8 py-3 text-lg font-bold text-white transition-transform transform rounded-lg shadow-lg bg-gradient-to-r from-blue-500 to-blue-700 hover:scale-110 hover:from-blue-600 hover:to-blue-800 hover:shadow-2xl"
+            className="px-6 py-3 text-base font-bold text-white transition-transform transform rounded-lg shadow-lg sm:px-8 sm:text-lg bg-gradient-to-r from-blue-500 to-blue-700 hover:scale-110 hover:from-blue-600 hover:to-blue-800 hover:shadow-2xl"
           >
             🚀 Get a Free Quote
           </button>
@@ -81,7 +81,7 @@ const WindowWashing = () => {
 
         {/* Modal */}
         {isModalOpen && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm">
+          <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-black bg-opacity-50 backdrop-blur-sm">
             <div className="relative w-full max-w-md p-6 bg-white rounded-lg shadow-xl">
               {/* Close Button */}
               <button
@@ -91,7 +91,7 @@ const WindowWashing = () => {
                 ✖
               </button>
 
-              <h2 className="mb-4 text-3xl font-bold text-center text-blue-700">
+              <h2 className="mb-4 text-2xl font-bold text-center text-blue-700 sm:text-3xl">
                 Request a Free Quote
               </h2>
 

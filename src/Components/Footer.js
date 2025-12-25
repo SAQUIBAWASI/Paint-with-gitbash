@@ -35,7 +35,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Content */}
-      <div className="grid grid-cols-1 px-4 mx-auto gap-x-8 max-w-7xl sm:px-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-8 px-4 mx-auto max-w-7xl sm:px-6 md:grid-cols-2 lg:grid-cols-4">
         
         {/* Contact Info */}
         <div>
@@ -100,6 +100,11 @@ const Footer = () => {
             </a>
           </div>
         </div>
+      </div>
+
+      {/* Bottom Section */}
+      <div className="mt-12 text-center text-gray-500">
+        <p>&copy; 2025 Kala Paint Works. All Rights Reserved.</p>
       </div>
     </footer>
   );

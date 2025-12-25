@@ -8,39 +8,40 @@ import Wall from "../assets/images/wall.jpg";
 
 const Services = () => {
   const navigate = useNavigate();
+
   const services = [
     {
       title: "Regular Painting",
       description:
-        "Regular Painting refers to the process of applying paint to a surface such as canvas, walls, or wood to create visual art or protective coatings.",
+        "Paint applications for canvas, walls, or wood for visual appeal or protection.",
       image: Regul,
     },
     {
       title: "Wall Painting",
       description:
-        "Wall painting is a form of artistic expression where designs, patterns, or murals are created directly on walls.",
+        "Creative and artistic painting directly on walls for decor and aesthetics.",
       image: Wall,
     },
     {
       title: "Floor Coating",
       description:
-        "Floor coating is a protective layer applied to surfaces like concrete, wood, or tiles to enhance durability, aesthetics, and resistance to wear.",
+        "Durable surface protection for floors against wear and tear.",
       image: Floor,
     },
     {
       title: "Graffiti Removal",
       description:
-        "Graffiti removal is the process of cleaning unwanted markings, drawings, or writings from surfaces using various techniques.",
+        "Safe removal of unwanted graffiti from walls or surfaces.",
       image: Gail,
     },
     {
       title: "Mildew Removal",
-      description: "Safe and effective mildew removal services.",
+      description:
+        "Professional mildew removal services for a clean, healthy environment.",
       image: Maild,
     },
   ];
 
-  // ✅ "Why Choose Us" Data
   const whyChooseUs = [
     { icon: "💻", title: "Customised Design" },
     { icon: "⏳", title: "On Time Completion" },
@@ -49,51 +50,78 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen p-10 bg-gray-50">
-      {/* ✅ Services Section */}
-      <h2 className="text-4xl font-bold text-center text-gray-800">
-        Our Services
-      </h2>
-      <div className="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3">
-        {services.map((service, index) => (
-          <div
-            key={index}
-            className="overflow-hidden transition-all duration-300 transform bg-white rounded-lg shadow-lg hover:scale-105 hover:shadow-xl"
-          >
-            <img
-              src={service.image}
-              alt={service.title}
-              className="object-cover w-full h-52"
-            />
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-900">
-                {service.title}
-              </h3>
-              <p className="mt-2 text-gray-700">{service.description}</p>
-              <button className="mt-4 text-purple-600 hover:underline"
-               onClick={() => navigate(`/services/${service.title}`)}
-               >
-                Know more
-              </button>
-            </div>
-          </div>
-        ))}
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Banner */}
+      <div
+        className="relative flex items-center justify-center w-full min-h-[40vh] text-white bg-center bg-cover"
+        style={{ backgroundImage: "url('/images/home.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div className="relative z-10 p-6 text-center">
+          <h1 className="text-4xl font-bold sm:text-5xl">
+            Our Premium Services
+          </h1>
+          <p className="mt-4 text-lg sm:text-xl">
+            Trusted painting & coating solutions for your spaces.
+          </p>
+        </div>
       </div>
 
-      {/* ✅ Why Choose Us Section */}
-      <div className="mt-16 text-center">
-        <h2 className="text-4xl font-bold text-gray-800">Why Choose Us</h2>
-        <div className="grid grid-cols-1 gap-8 mt-8 md:grid-cols-3 lg:grid-cols-4">
-          {whyChooseUs.map((item, index) => (
-            <div key={index} className="flex flex-col items-center">
-              <span className="text-5xl">{item.icon}</span>
-              <h3 className="mt-4 text-xl font-semibold text-gray-900">
-                {item.title}
-              </h3>
+      {/* Services Menu Style Section */}
+      <section className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-center text-purple-600 sm:text-4xl">
+          Explore Our Services
+        </h2>
+        <p className="mt-2 text-center text-gray-600">
+          Select a service to know more about what we offer.
+        </p>
+
+        <div className="grid grid-cols-1 gap-10 mt-12 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="flex flex-col overflow-hidden transition bg-white shadow-lg rounded-xl hover:shadow-xl hover:scale-105"
+            >
+              <img
+                src={service.image}
+                alt={service.title}
+                className="object-cover w-full h-48"
+              />
+              <div className="flex flex-col justify-between flex-1 p-6">
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-800">
+                    {service.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-gray-600">
+                    {service.description}
+                  </p>
+                </div>
+                <button
+                  onClick={() => navigate(`/services/${service.title}`)}
+                  className="self-start mt-4 font-medium text-purple-600 transition hover:text-purple-800"
+                >
+                  Know More →
+                </button>
+              </div>
             </div>
           ))}
         </div>
-      </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="px-4 py-16 bg-white sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-center text-gray-800 sm:text-4xl">
+          Why Choose Us
+        </h2>
+        <div className="grid grid-cols-1 gap-10 mt-12 text-center md:grid-cols-2 lg:grid-cols-4">
+          {whyChooseUs.map((item, index) => (
+            <div key={index} className="flex flex-col items-center justify-center p-4">
+              <span className="text-5xl">{item.icon}</span>
+              <h4 className="mt-4 text-xl font-semibold text-gray-800">{item.title}</h4>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 };

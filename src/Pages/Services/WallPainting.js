@@ -22,25 +22,27 @@ const WallPainting = () => {
 
   return (
     <div
-      className="relative flex flex-col items-center justify-center min-h-screen p-10 bg-center bg-no-repeat bg-cover"
+      className="relative flex flex-col items-center justify-center min-h-screen p-6 bg-center bg-no-repeat bg-cover sm:p-8 lg:p-10"
       style={{ backgroundImage: "url('/images/wall.jpg')" }}
     >
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black opacity-60"></div>
 
       {/* Content Wrapper */}
-      <div className="relative z-10 p-10 bg-white rounded-lg shadow-2xl bg-opacity-95 md:w-3/5">
-        <h1 className="text-5xl font-extrabold text-gray-900">
+      <div className="relative z-10 p-6 bg-white rounded-lg shadow-2xl bg-opacity-95 sm:w-4/5 lg:w-3/5">
+        <h1 className="text-4xl font-extrabold text-center text-gray-900 sm:text-5xl">
           🎨 Premium Wall Painting Services
         </h1>
-        <p className="mt-4 text-lg leading-relaxed text-gray-800">
-          Transform your space with **vibrant, long-lasting, and eco-friendly** paints!  
-          Whether it's for **homes, offices, or commercial spaces**, we deliver expert solutions tailored to your style.
+        <p className="mt-4 text-lg leading-relaxed text-center text-gray-800 sm:text-xl">
+          Transform your space with <strong>vibrant, long-lasting, and eco-friendly</strong> paints!  
+          Whether it's for <strong>homes, offices, or commercial spaces</strong>, we deliver expert solutions tailored to your style.
         </p>
 
         {/* Why Choose Us */}
-        <h2 className="mt-6 text-2xl font-semibold text-gray-900">Why Choose Us?</h2>
-        <ul className="mt-4 space-y-2 text-lg text-gray-700">
+        <h2 className="mt-6 text-2xl font-semibold text-center text-gray-900 sm:text-left">
+          Why Choose Us?
+        </h2>
+        <ul className="mt-4 space-y-2 text-base text-gray-700 sm:text-lg sm:pl-6">
           <li>✅ High-quality, long-lasting paints</li>
           <li>✅ Professional and experienced painters</li>
           <li>✅ Affordable pricing with top-notch service</li>
@@ -48,10 +50,10 @@ const WallPainting = () => {
         </ul>
 
         {/* Services Section */}
-        <h2 className="mt-8 text-3xl font-semibold text-gray-900">
+        <h2 className="mt-8 text-3xl font-semibold text-center text-gray-900 sm:text-left">
           Our Wall Painting Services:
         </h2>
-        <div className="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-2 lg:grid-cols-2">
           {[
             {
               title: "🖌 Interior Painting",
