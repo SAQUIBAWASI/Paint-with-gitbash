@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaBars, FaPhone, FaTimes } from "react-icons/fa";
 import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Footer from "./Components/Footer";
+import ScrollToTop from "./Components/ScrollToTop";
 import About from "./Pages/About";
 import BlogDetails from "./Pages/BlogaDetails";
 import Blog from "./Pages/Blogs";
@@ -23,6 +24,7 @@ const App = () => {
 
   return (
     <Router>
+      <ScrollToTop />
       <nav className="relative flex items-center justify-between p-4 text-white bg-gray-900 z-50">
         <div className="flex items-center gap-4">
           <img src="/images/logo1.png" alt="Kala Paintworks Logo" className="h-14" />
